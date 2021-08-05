@@ -1,9 +1,18 @@
+
+
 .navbar{
-width: 1440px;
-color: black;
-position: relative;
-z-index: 3;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 1520px;
 }
+
+
 
 video{
     object-fit: cover;
@@ -11,6 +20,7 @@ video{
     height: 100%;
     position: fixed;
     z-index: -1;
+   
 }
 
 .hero{
@@ -41,10 +51,16 @@ margin-top: -100px;
  background-color: white;
  
  display: flex;
- justify-content: space-between;
- 
+ justify-content: space-around;
+ flex-wrap: wrap;
  align-items: center;
-  padding: 10px;
-  flex-wrap: wrap;
+  padding: 20px;
+  
 }
 
+
+.Basket{
+  display:flex;
+  background-color: gray;
+  align-items: center;
+}

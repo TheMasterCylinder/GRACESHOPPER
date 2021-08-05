@@ -2,25 +2,25 @@ const data = {
 
 products: [
     {id: '1',
-    name: 'product',
-    price: 100,
-    image: '/images/BKG.png',
-    desc: 'this is product yay'
+    name: '"Maverick" Unisex T-Shirt (Black)',
+    price: 7.99,
+    image: '/images/MavericShirt.png',
+    desc: 'You couldnt buy a better T-Shirt! Stop wearing what everyone else is wearing and #GoMaverick!'
 },
 
 {id: '2',
-name: 'product',
-price: 100,
+name: 'The Mighty Mihnt Bros. Vol.1 (Digital Only)',
+price: 12.96,
 image: '/images/BKG.png',
-desc: 'this is product yay'
+desc: 'Own the COMPLETE first season of the Mighty Mihnt bros. cartoon series! includes ALL 13 episodes.'
 },
 
 
 {id: '3',
-name: 'product',
-price: 100,
-image: '/images/BKG.png',
-desc: 'this is product yay'
+name: 'ImagiMation Logo Cap (Black)',
+price: 3.45,
+image: '/images/imagicap.png',
+desc: 'Show your enthusiasm for your new favorite entertainment studio! don this hat to be cool for days! yay!'
 },
 
 ]

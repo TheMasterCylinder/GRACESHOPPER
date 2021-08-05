@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import { Button } from 'react-bootstrap';
 
 const CardUno = (props) => {
-const {product} = props;
+const {product, onAdd} = props;
 return (
         <div >
            
@@ -15,7 +15,7 @@ return (
       {product && product.desc}
     </Card.Text>
     <Card.Title>${product && product.price}</Card.Title>
-    <Button variant="primary">Add to Cart</Button>
+    <Button variant="primary" onClick={()=>onAdd(product)}>Add to Cart</Button>
   </Card.Body>
 </Card> 
           

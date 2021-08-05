@@ -1,24 +1,29 @@
+import React from 'react';
+import  Home  from './Home';
+import  Cart  from './Cart';
+import  Login  from './Login';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import './App.css';
-import { Navbar,Hero,Main } from './components/index';
-import data from './data';
+
 
 function App() {
 
-const {products} = data;
+
 
   return (
-    <div className="App">
-       <Navbar />
-      <header className="App-header">
+   <Router>
+      <div className="App">
      
-        <Hero />
-       
-      </header>
      
-      <Main products={products} />
+     <Switch>
+     <Route path='/' exact component={Home}/>
+     <Route path='/Home' exact component={Home}/>
+     <Route path='/cart' component={Cart}/>
+     <Route path='/Login' component={Login}/>
+     </Switch>
      
     </div>
+   </Router>
   );
 }
 
