@@ -1,13 +1,17 @@
 import React from 'react';
 import { Navbar,Container,Nav } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
-
-
-
+import Offcanvas from 'react-bootstrap/Offcanvas'
+import {useState} from 'react'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 
 const Navbar1 = () => {
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div className="navbar" color='black'>
@@ -25,16 +29,69 @@ const Navbar1 = () => {
     <Navbar.Brand href="#home">IMAGIMATION</Navbar.Brand>
     <Nav className="me-auto">
 
-<Link to='/Home'> <Nav.Link href="#Home">Home</Nav.Link>
-</Link>
+ <Nav.Link href="#Home">Home</Nav.Link>
+
      
-<Link to='/Cart'>
+
 <Nav.Link href="#Cart">Cart</Nav.Link>
-</Link>
+
       
-<Link to='/Login'>
-<Nav.Link href="#Login">Login</Nav.Link>
-</Link>
+
+<Nav.Link href="#Login" onClick={handleShow}>Login/Register</Nav.Link>
+
+<Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Register</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+         
+        <Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+   </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
+
+<br/>
+<br/>
+<br/>
+
+<Offcanvas.Title>Login</Offcanvas.Title>
+
+<Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" />
+    </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+   </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
+
+
+
+        </Offcanvas.Body>
+      </Offcanvas>
      
 
     </Nav>

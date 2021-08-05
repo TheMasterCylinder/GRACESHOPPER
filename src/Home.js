@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { Navbar,Hero,Main } from './components/index';
+import { Navbar,Hero,Main,Basket} from './components/index';
 import data from './data';
 import {useState} from 'react'
 
@@ -28,7 +28,7 @@ export default function Home() {
       </header>
      
       <Main onAdd={onAdd} products={products} />
-      
+      <Basket onAdd={onAdd} cartItems={cartItems}/>
         </div>
     )
     

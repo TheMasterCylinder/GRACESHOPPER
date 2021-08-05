@@ -4,7 +4,7 @@ import  CardUno  from './CardUno';
 const Main = (props) => {
 
     const {products, onAdd} = props;
-
+  
     return (
         <div className="Main">
 
@@ -13,6 +13,7 @@ const Main = (props) => {
 {products.map((product)=>(
     <CardUno key={product.id} product={product} onAdd={onAdd} />
 ))}
+
 
 
 
