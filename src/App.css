@@ -1,15 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
 
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
 
 .navbar{
+  
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  width: 1520px;
+  z-index: 999; 
 }
 
 
@@ -47,22 +57,39 @@ margin-top: -100px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.Main{
- background-color: white;
- 
- display: flex;
+.Main{ 
+  background-color: white;
+display: flex;
  justify-content: space-around;
  flex-wrap: wrap;
  align-items: center;
   padding: 20px;
+  z-index: 3;
   
 }
 
 
-.Basket{
-  display:flex;
-  background-color: gray;
-  align-items: center;
-  width: 400px;
+.cart{
+  display: flex;
   justify-content: center;
+  left: 23%;
+  z-index: 2;
+  
+}
+
+.bkg{
+  background-color: white;
+}
+
+
+.footer{
+  background-color: rgb(32, 33, 34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer > p{
+  color: aliceblue;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { Navbar,Hero,Main,Basket} from './components/index';
+import { Navbar,Hero,Main,Basket,Footer } from './components/index';
 import data from './data';
 import {useState} from 'react'
 
@@ -18,17 +18,31 @@ export default function Home() {
       }
      } 
     
+const onRemove = (product) => {
+  const exist = cartItems.find((x) => x.id === product.id);
+  if(exist.qty === 1){
+    setCartItems(cartItems.filter((x) => x.id !== product.id))
+  }else{
+    setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty -1} : x )
+    );
+  }
+}
+
     return (
-        <div className='App'>
-            <Navbar />
-      <header className="App-header">
+        <div >
+           
+      <header className='header' >
      
-        <Hero />
+      <Navbar countCartItems={cartItems.length}/>
        
       </header>
-     
+      <Hero />
       <Main onAdd={onAdd} products={products} />
-      <Basket onAdd={onAdd} cartItems={cartItems}/>
+     
+      <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
+
+      <Footer/>
+     
         </div>
     )
     

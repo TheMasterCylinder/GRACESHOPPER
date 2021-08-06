@@ -4,9 +4,12 @@ import Offcanvas from 'react-bootstrap/Offcanvas'
 import {useState} from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Badge from 'react-bootstrap/Badge'
 
 
-const Navbar1 = () => {
+const Navbar1 = (props) => {
+
+  const {countCartItems} = props;
 
     const [show, setShow] = useState(false);
 
@@ -14,10 +17,10 @@ const Navbar1 = () => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className="navbar" color='black'>
+        <div className="navbar" >
            
  
-           <Navbar bg="dark" variant="dark">
+           <Navbar bg="dark" variant="dark" style={{ width: '100rem' }}>
     <Container>
     <img
         src="/MAVERICK.svg"
@@ -29,13 +32,27 @@ const Navbar1 = () => {
     <Navbar.Brand href="#home">IMAGIMATION</Navbar.Brand>
     <Nav className="me-auto">
 
- <Nav.Link href="#Home">Home</Nav.Link>
+ 
 
      
 
-<Nav.Link href="#Cart">Cart</Nav.Link>
+<Nav.Link href="#Cart">
 
-      
+<img
+        src="/caart.svg"
+        width="50"
+        height="30"
+        className="d-inline-block align-top"
+        alt="React Bootstrap logo"
+      />
+{countCartItems ? (
+<Badge pill bg="danger">{countCartItems}</Badge>
+  ) : (
+    ''
+    ) }
+  </Nav.Link>
+
+  
 
 <Nav.Link href="#Login" onClick={handleShow}>Login/Register</Nav.Link>
 
