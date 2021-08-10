@@ -1,20 +1,20 @@
 import React from 'react';
 import { Navbar,Container,Nav } from 'react-bootstrap';
-import Offcanvas from 'react-bootstrap/Offcanvas'
-import {useState} from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 const Navbar1 = (props) => {
 
+  const {loginWithRedirect} = useAuth0();
+  const {logout} = useAuth0();
+
   const {countCartItems} = props;
 
-    const [show, setShow] = useState(false);
+    
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    
+    
 
     return (
         <div className="navbar" >
@@ -54,65 +54,11 @@ const Navbar1 = (props) => {
 
   
 
-<Nav.Link href="#Login" onClick={handleShow}>Login/Register</Nav.Link>
+<Nav.Link href="#Login" onClick={() => loginWithRedirect()}>Login/Register</Nav.Link>
 
-<Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Register</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-         
-        <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-   </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-
-<br/>
-<br/>
-<br/>
-
-<Offcanvas.Title>Login</Offcanvas.Title>
-
-<Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-   </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-
-
-
-        </Offcanvas.Body>
-      </Offcanvas>
-     
+<Nav.Link href="#Login" onClick={() => logout()}>Logout</Nav.Link>
 
     </Nav>
-
     </Container>
   </Navbar>
       
